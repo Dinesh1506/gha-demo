@@ -1,35 +1,13 @@
-name: Hello World
-on:
-  push:
-    branches:
-      - main
-      - develop
-      - 'release/**'
-  pull_request:
-    types:
-      - opened
-    branches:
-      - main
-
+name: GitHub Action Demo
+on: push
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Build Step
-        run: |
-          echo "Hello, ${{ vars.MY_NAME}}"
-          echo "Hello, ${{ secrets.DOCKER_PASSWORD}}"
-  test:
-     runs-on: ubuntu-latest
-     needs: build
+   action-demo:
+     runs-on : ubuntu-latest
      steps:
-       - name: Test Step
-         run: echo "A Demo Test"
-  deploy:
-     runs-on: ubuntu-latest
-     needs: test
-     steps:
-       - name: Deploy Step
-         run: echo "A Demo Deploy"
-     
+      - name: Checkout the Code
+        uses: actions/checkout@v4
+      - name: Print Index.html file
+        run: cat index.html
+        
+
         
