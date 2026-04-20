@@ -17,8 +17,8 @@ jobs:
     steps:
       - name: Build Step
         run: |
-          echo "Hello, HI, ${{ vars.MY_NAME}}"
-          echo "Hello, HI, ${{ secrets.DOCKER_PASSWORD}}"
+          echo "Hello, ${{ vars.MY_NAME}}"
+          echo "Hello, ${{ secrets.DOCKER_PASSWORD}}"
   test:
      runs-on: ubuntu-latest
      needs: build
