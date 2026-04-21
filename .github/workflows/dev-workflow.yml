@@ -16,7 +16,7 @@ jobs:
                 terraform_version: 1.8.5
 
             - name: Aws Access using OIDC
-              run: aws-actions/configure-aws-credentials@v4
+              uses: aws-actions/configure-aws-credentials@v4
               with:
                 role-to-assume: arn:aws:iam::431655581666:role/github-oidc-udemy
                 role-session-name: github-actions
